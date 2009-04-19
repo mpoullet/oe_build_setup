@@ -1,3 +1,5 @@
 tmp/
+sources
+sources/
 openembedded/
 *.swp
