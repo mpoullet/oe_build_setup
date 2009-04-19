@@ -10,8 +10,14 @@ export PATH="${OE_OLAY_OE}/bitbake/bin:$PATH"
 # bitbake 1.8.12 filters env except for that specified in BB_ENV_EXTRAWHITE  
 export BB_ENV_EXTRAWHITE="OE_HOME OE_OLAY_OE OE_OLAY_LOCAL"
 
-if [ $# -gt 0 ]; 
-then
+if [ ! -d openembedded ]; then
+git clone git://git.openembedded.org/openembedded.git
+cd openembedded
+git checkout -b stable/2009 origin/stable/2009
+cd -
+fi
+
+if [ $# -gt 0 ]; then
 echo "###################################"
 echo "Start building $1 ..."
 echo "###################################"
