@@ -3,3 +3,6 @@ sources
 sources/
 openembedded/
 *.swp
+.eclipse-data
+.project
+meta-texasinstruments/
