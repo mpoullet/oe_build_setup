@@ -17,6 +17,18 @@ git checkout -b stable/2009 origin/stable/2009
 cd -
 fi
 
+cd openembedded
+#REMOTE_HEAD=$(git ls-remote origin HEAD | cut -f1)
+REMOTE_HEAD=$(git ls-remote origin stable/2009 | cut -f1)
+LOCAL_HEAD=$(git rev-list HEAD^..HEAD)
+if [ ! ${REMOTE_HEAD} == ${LOCAL_HEAD} ]; then
+	echo "OpenEmbedded Directory is not up to date, updating..."
+	git pull
+else
+	echo "OpenEmbedded Directory is up to date"
+fi
+cd -
+
 if [ $# -gt 0 ]; then
 echo "###################################"
 echo "Start building $1 ..."
