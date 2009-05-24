@@ -7,3 +7,4 @@ openembedded/
 .eclipse-data
 .project
 meta-texasinstruments/
+patches/
