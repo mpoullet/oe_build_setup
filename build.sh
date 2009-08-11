@@ -21,7 +21,7 @@ cd openembedded
 #REMOTE_HEAD=$(git ls-remote origin HEAD | cut -f1)
 REMOTE_HEAD=$(git ls-remote origin stable/2009 | cut -f1)
 LOCAL_HEAD=$(git rev-list HEAD^..HEAD)
-if [ ! ${REMOTE_HEAD} == ${LOCAL_HEAD} ]; then
+if [ "${REMOTE_HEAD}" != "${LOCAL_HEAD}" ]; then
 	echo "OpenEmbedded Directory is not up to date, updating..."
 	git pull
 else
