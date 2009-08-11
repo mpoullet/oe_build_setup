@@ -8,3 +8,4 @@ openembedded/
 .project
 meta-texasinstruments/
 patches/
+local/src
